@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+.bar.bid {
+    fill: rgba(40, 193, 44, 0.3);
+  }
+  
+  .bar.ask {
+    fill: rgba(255, 0, 0, 0.4);
+  }
+  body {
+    background-color: #273640;
+  }
+  .chart-container {
+    width: 60%;
+    float: left;
+  }
+  
+  .bid-side, .ask-side {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+    background-color: #1b262d;
+    table {
+      vertical-align: top;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+    td,th {
+      width: 25%;
+      text-align: right;
+    }
+    td {
+      color: #fff;
+      font-size: clamp(0.8rem, 0.8vh, 1rem);
+    }
+    th {
+      color: #969b9e;
+      font-size: clamp(0.9rem, 0.9vh, 1rem);
+    }
+  }
+  

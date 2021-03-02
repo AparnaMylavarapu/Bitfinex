@@ -1,12 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
-import ProductDetail from './ProductDetail';
+import './Style.scss';
+import { Provider } from 'react-redux';
+import store from './configureStore';
+import Home from './Home';
+
 
 function App() {
   return (
-    <div className="App">
-      <ProductDetail></ProductDetail>
-    </div>
+    <Provider store={store}>
+      <div>
+      <Home></Home>
+      </div>
+    </Provider>
+    
   );
 }
 
