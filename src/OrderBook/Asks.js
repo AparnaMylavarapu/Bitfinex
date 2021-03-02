@@ -1,6 +1,7 @@
 import React from 'react';
 import DepthChart from './DepthChart';
 import { connect } from 'react-redux';
+import {maxPoints} from '../constants/index';
 
 const mapStateToProps = (state) => {
     return {
@@ -37,7 +38,7 @@ const Asks = (props) => {
                 </tr>
             </thead>
             <tbody>
-                {props.askData.slice(0,35).map((item, index) => {
+                {props.askData.slice(0,maxPoints).map((item, index) => {
                     return <React.Fragment key={"ask" + index}>
                         <tr>
                             <td>{item.price}</td>

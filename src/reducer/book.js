@@ -1,3 +1,5 @@
+import {BidData, AskData, PriceData} from '../constants/index';
+
 const initState = {
     bidData: [],
     askData: [],
@@ -6,11 +8,11 @@ const initState = {
 
  const book = (state = initState, action) => {
     switch (action.type) {
-      case 'BID_DATA':
+      case BidData:
         return {...state, bidData: [...state.bidData, ...action.payload]}
-        case 'ASK_DATA':
+        case AskData:
         return {...state, askData: [...state.askData, ...action.payload]}
-        case 'PRICE_DATA':
+        case PriceData:
         return {...state, priceWithTotal: action.payload}
       default:
         return state

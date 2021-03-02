@@ -1,5 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import * as d3 from 'd3';
+import {maxPoints} from '../constants/index';
 
 const DepthChart = (props) => {
     let x;
@@ -7,7 +8,6 @@ const DepthChart = (props) => {
     let height;
     let svg;
     let chartHeight = 650;
-    let maxPoints = 100;
     const chart = useRef();
     useEffect(() => {
       createChart();
