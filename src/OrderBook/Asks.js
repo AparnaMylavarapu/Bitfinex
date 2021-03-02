@@ -42,7 +42,8 @@ const Asks = (props) => {
                     return <React.Fragment key={"ask" + index}>
                         <tr>
                             <td>{item.price}</td>
-                            <td>{props.priceWithTotal.ask[item.price+'$']}</td>
+                            <td>{props.priceWithTotal.ask[item.price+'$']? props.priceWithTotal.ask[item.price+'$'].toFixed(3):
+                                props.priceWithTotal.ask[item.price+'$']}</td>
                             <td>{item.amount}</td>
                             <td>{item.count}</td>
                         </tr>

@@ -46,20 +46,22 @@ class Home extends React.Component {
             price = finalMsg[1][0];
             count = finalMsg[1][1];
             amount = finalMsg[1][2];
+            amount = amount.toString();
+            amount = parseFloat(amount).toFixed(3);
             /* If amount is greater than 0 its a bid if not ask */
              type = amount > 0 ? 'bid' : 'ask';
             if( count > 0 && (amount !== 1 || amount !== -1)) {
                 if(amount < 0) {
                     amount  = amount * (-1);
                 }
-                if( prcWithTotal[type][price+'$']) {
+                if( !prcWithTotal[type][price+'$']) {
                     prcWithTotal[type][price+'$'] = +amount;
                     this.props.dispatch({
                         type: 'PRICE_DATA',
                         payload: prcWithTotal
                     });
                 } else {
-                    prcWithTotal[type][price+'$'] = +amount;
+                    prcWithTotal[type][price+'$'] += +amount;
                     this.props.dispatch({
                         type: 'PRICE_DATA',
                         payload: prcWithTotal

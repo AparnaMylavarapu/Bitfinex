@@ -43,7 +43,8 @@ const Bids = (props) => {
                             <tr>
                                 <td>{item.count}</td>
                                 <td>{item.amount}</td>
-                                <td>{props.priceWithTotal.bid[item.price+'$']}</td>
+                                <td>{props.priceWithTotal.bid[item.price+'$']?props.priceWithTotal.bid[item.price+'$'].toFixed(3)
+                                :props.priceWithTotal.bid[item.price+'$']}</td>
                                 <td>{item.price}</td>
                             </tr>
                         </React.Fragment>
